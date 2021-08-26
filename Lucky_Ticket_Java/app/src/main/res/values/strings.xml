@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Lucky_Ticket_Java</string>
+    <string name="verify">Verify</string>
+    <string name="number_hint">Enter number</string>
 </resources>

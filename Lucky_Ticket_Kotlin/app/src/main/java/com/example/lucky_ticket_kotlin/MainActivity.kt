@@ -28,20 +28,21 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun changeColor(view: View){
-        val num = number!!.text.toString().trim { it <= ' ' }
+        val num = number?.text.toString().trim { it <= ' ' }
 
         if (TextUtils.isEmpty(num) || num.length != 6) {
-            Toast.makeText(applicationContext, "incorrectly entered number", Toast.LENGTH_SHORT)
-                .show()
+            drawable?.setTint(Color.GRAY)
+            lamp?.background = drawable
+            Toast.makeText(applicationContext, "incorrectly entered number", Toast.LENGTH_SHORT).show()
             return
         }
 
         if (isLucky(num)) {
-            drawable!!.setColorFilter(Color.GREEN, PorterDuff.Mode.SRC_ATOP)
-            lamp!!.background = drawable
+            drawable?.setTint(Color.GREEN)
+            lamp?.background = drawable
         } else {
-            drawable!!.setColorFilter(Color.RED, PorterDuff.Mode.SRC_ATOP)
-            lamp!!.background = drawable
+            drawable?.setTint(Color.RED)
+            lamp?.background = drawable
         }
     }
 

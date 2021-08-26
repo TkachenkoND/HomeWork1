@@ -31,15 +31,17 @@ public class MainActivity extends AppCompatActivity {
         String num = number.getText().toString().trim();
 
         if (TextUtils.isEmpty(num) || num.length() != 6 ) {
+            drawable.setTint(Color.GRAY);
+            lamp.setBackground(drawable);
             Toast.makeText(getApplicationContext(), "incorrectly entered number", Toast.LENGTH_SHORT).show();
             return;
         }
 
         if(isLucky(num)){
-            drawable.setColorFilter(Color.GREEN, PorterDuff.Mode.SRC_ATOP);
+            drawable.setTint(Color.GREEN);
             lamp.setBackground(drawable);
         }else {
-            drawable.setColorFilter(Color.RED, PorterDuff.Mode.SRC_ATOP);
+            drawable.setTint(Color.RED);
             lamp.setBackground(drawable);
         }
 
